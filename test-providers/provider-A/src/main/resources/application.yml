@@ -1,0 +1,11 @@
+server:
+  port: 40001
+
+spring:
+  application:
+    name: provider-A
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:30001/eureka/

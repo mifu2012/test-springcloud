@@ -1,0 +1,6 @@
+server:
+  port: 40004
+
+spring:
+  application:
+    name: provider-D

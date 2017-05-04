@@ -1,0 +1,13 @@
+server:
+  port: 30001
+
+spring:
+  application:
+    name: test-eureka-server
+
+eureka:
+  client:
+   register-with-eureka: false
+   fetch-registry: false
+   serviceUrl:
+    defaultZone: http://localhost:${server.port}/eureka/
