@@ -1,4 +1,4 @@
-package provider;
+package ribbon;
 
 import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.config.SocketConfig;
@@ -6,10 +6,13 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
@@ -18,12 +21,14 @@ import org.springframework.web.client.RestTemplate;
  * Description:
  * Author: mif
  * Date: 2017/5/3
- * Time: 17:51
+ * Time: 18:13
  * Copyright:拓道金服 Copyright (c) 2017
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class PCAPP {
+public class RibbonApp {
+
+    private static final Logger log = LoggerFactory.getLogger(RibbonApp.class);
 
     @Bean
     @LoadBalanced
@@ -50,6 +55,8 @@ public class PCAPP {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(PCAPP.class, args);
+
+        ConfigurableApplicationContext run = SpringApplication.run(RibbonApp.class, args);
+//        log.info("message is {}", run.getBean(TestService.class).getMessage());
     }
 }
