@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
  * Author: mif
  * Date: 2017/5/3
  * Time: 17:58
- * Copyright:拓道金服 Copyright (c) 2017
  */
 @RestController
 public class TestDController {

@@ -9,7 +9,6 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * Author: mif
  * Date: 2017/5/3
  * Time: 17:37
- * Copyright:拓道金服 Copyright (c) 2017
  */
 @SpringBootApplication
 @EnableEurekaServer

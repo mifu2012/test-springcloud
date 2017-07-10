@@ -13,7 +13,6 @@ import org.springframework.web.client.RestTemplate;
  * Author: mif
  * Date: 2017/5/4
  * Time: 11:31
- * Copyright:拓道金服 Copyright (c) 2017
  */
 @RestController
 public class TestControlelr {
@@ -27,7 +26,9 @@ public class TestControlelr {
         Long s = System.currentTimeMillis();
         String m = restTemplate.getForEntity("http://PROVIDER-A/getMessage", String.class).getBody();
         Long e = System.currentTimeMillis();
+
         log.info("Ribbon : startTime = {},endTime={},expend = {}", s, e, e - s);
+
         return m;
     }
 }

@@ -22,7 +22,6 @@ import org.springframework.web.client.RestTemplate;
  * Author: mif
  * Date: 2017/5/3
  * Time: 18:13
- * Copyright:拓道金服 Copyright (c) 2017
  */
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -33,8 +32,8 @@ public class RibbonApp {
     @Bean
     @LoadBalanced
     RestTemplate restTemplate() {
-        return new RestTemplate(new HttpComponentsClientHttpRequestFactory(getHttpClient()));
-//        return new RestTemplate();
+//        return new RestTemplate(new HttpComponentsClientHttpRequestFactory(getHttpClient()));
+        return new RestTemplate();
     }
 
     public CloseableHttpClient getHttpClient() {
@@ -45,7 +44,7 @@ public class RibbonApp {
         SocketConfig socketConfig = socketConfigBuilder.build();
 
         PoolingHttpClientConnectionManager connManager = new PoolingHttpClientConnectionManager();
-        connManager.setMaxTotal(200);
+        connManager.setMaxTotal(500);
         connManager.setValidateAfterInactivity(500);
         connManager.setDefaultSocketConfig(socketConfig);
 

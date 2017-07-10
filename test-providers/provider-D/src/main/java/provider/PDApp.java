@@ -9,7 +9,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * Author: mif
  * Date: 2017/5/3
  * Time: 17:52
- * Copyright:拓道金服 Copyright (c) 2017
  */
 @SpringBootApplication
 @EnableDiscoveryClient

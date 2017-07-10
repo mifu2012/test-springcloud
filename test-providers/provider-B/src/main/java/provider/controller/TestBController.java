@@ -13,7 +13,6 @@ import org.springframework.web.client.RestTemplate;
  * Author: mif
  * Date: 2017/5/3
  * Time: 17:53
- * Copyright:拓道金服 Copyright (c) 2017
  */
 @RestController
 public class TestBController {
